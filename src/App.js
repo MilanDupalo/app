@@ -8,13 +8,15 @@ function App() {
   return (
     <div className='App'>
       <Router>
+
+      <h1 className="logo">Blog-post</h1>
         <nav>
-          <ul>
+          <ul className="navbar">
             <li>
-              <Link to='/posts'>All Posts</Link>
+              <Link className="nav-link" to='/posts'>All Posts</Link>
             </li>
             <li>
-              <Link to='/add'>Add Post</Link>
+              <Link className="nav-link" to='/add'>Add Post</Link>
             </li>
           </ul>
         </nav>

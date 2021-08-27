@@ -35,12 +35,13 @@ function AddPost(){
 
     return(
         <div>
-            <h2>Add your new post</h2>
+            <h2>{id ? 'Edit' : 'Add new'} your new post</h2>
             <form
+            className="addform"
             onSubmit={handleSubmit}
             >
-                <div>
-                <label>Title of your post</label>
+                <div className="form-input">
+                <label>Title of your post : </label>
                 <input required minLength="2" type="text"  value={newPost.title} onChange={({ target }) =>
                 setNewPost({ ...newPost, title: target.value })
                 }>  
@@ -48,15 +49,15 @@ function AddPost(){
                 </div>
 
 
-                <div>
-                    <label>Enter your text</label>
+                <div className="form-input">
+                    <label>Enter your text : </label>
                     <input  required minLength="2" maxLength="300"  type="text" value={newPost.text} onChange={({ target }) =>
                     setNewPost({ ...newPost, text: target.value })
                     }></input>
                 </div>
 
-                <button onClick={handleSubmit} type='button'>Add new post</button>
-                <button type='button' onClick={handleReset}>Reset this form/delete all</button>
+                <button className="yellow">{id ? 'Edit' : 'Add new'}</button>
+                <button className="green" type='button' onClick={handleReset}>Reset this form/delete all</button>
             </form>
         </div>
     )

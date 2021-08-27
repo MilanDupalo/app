@@ -28,14 +28,17 @@ function AppPosts(){
       return (
         <div>
             <h2>All Posts</h2>
-            <ul>
+            <ul className="card-container">
                 {posts.map((post)=>(
                     <li key={post.id}
                         id={post.id}
+                        className="card-box"
                     >
+                        <div className="card-inner">
                         <p>{post.title}</p>
-                        <button onClick={() => singlePage(post.id)}>View Post</button>
-                        <button onClick={() => editPage(post.id)}>Edit post</button>
+                        <button className="yellow" onClick={() => singlePage(post.id)}>View Post</button>
+                        <button className="green" onClick={() => editPage(post.id)}>Edit post</button>
+                        </div>
                     </li>
                 ))}
             </ul>

@@ -23,6 +23,13 @@ function AddPost(){
         history.push('/posts');
       };
 
+      const handleReset = () => {
+        setNewPost({
+          title:'',
+          text: '',
+        });
+      };
+
     
 
 
@@ -34,7 +41,7 @@ function AddPost(){
             >
                 <div>
                 <label>Title of your post</label>
-                <input type="text"  value={newPost.title} onChange={({ target }) =>
+                <input required minLength="2" type="text"  value={newPost.title} onChange={({ target }) =>
                 setNewPost({ ...newPost, title: target.value })
                 }>  
                 </input>
@@ -43,12 +50,13 @@ function AddPost(){
 
                 <div>
                     <label>Enter your text</label>
-                    <input type="text" value={newPost.text} onChange={({ target }) =>
+                    <input  required minLength="2" maxLength="300"  type="text" value={newPost.text} onChange={({ target }) =>
                     setNewPost({ ...newPost, text: target.value })
                     }></input>
                 </div>
 
-                <button>Add new post</button>
+                <button onClick={handleSubmit} type='button'>Add new post</button>
+                <button type='button' onClick={handleReset}>Reset this form/delete all</button>
             </form>
         </div>
     )

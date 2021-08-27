@@ -19,6 +19,10 @@ function AppPosts(){
       const singlePage = (id) => {
         history.push(`post/${id}`)
     }
+
+    const editPage = (id) =>{
+        history.push(`edit/${id}`)
+    }
      
     
       return (
@@ -31,6 +35,7 @@ function AppPosts(){
                     >
                         <p>{post.title}</p>
                         <button onClick={() => singlePage(post.id)}>View Post</button>
+                        <button onClick={() => editPage(post.id)}>Edit post</button>
                     </li>
                 ))}
             </ul>

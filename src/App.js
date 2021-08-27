@@ -28,6 +28,9 @@ function App() {
           <Route path='/post/:id'>
             <SinglePost/>
           </Route>
+          <Route path='/edit/:id'>
+            <AddPost/>
+          </Route>
         </Switch>
       </Router>
     </div>

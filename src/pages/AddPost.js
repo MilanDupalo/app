@@ -35,7 +35,7 @@ function AddPost(){
 
     return(
         <div>
-            <h2>{id ? 'Edit' : 'Add new'} your new post</h2>
+            <h2 >{id ? 'Edit' : 'Add new'} your new post</h2>
             <form
             className="addform"
             onSubmit={handleSubmit}

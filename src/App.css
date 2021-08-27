@@ -32,18 +32,21 @@ input:invalid:focus {
 }
 
 .card-box{
-  width: 250px;
+  width: 300px;
   height: 100px;
   background: #151515;
   position: relative;
   transition: 225ms;
   justify-self: center;
+  margin: 15px 0;
+  
   
 }
 
 .card-inner{
   position: absolute;
   transition: 225ms;
+
 }
 
 .card-inner:hover{
@@ -53,7 +56,7 @@ input:invalid:focus {
 button{
   color: white;
   background: transparent;
-  padding:5px;
+  padding:5px 14px;
   letter-spacing: 1px;
   border: 1px solid white;
   margin-left: 10px;
@@ -89,6 +92,19 @@ button{
   font-weight: bolder;
 }
 
+.card-box:hover .red{
+  border:2px solid red;
+  font-weight: bolder;
+}
+
+.red:hover{
+  background-color: red;
+  color: black;
+  border-radius: 2px;
+  border: none;
+  font-weight: bolder;
+}
+
 .navbar{
   display: flex;
   justify-content: flex-end;
@@ -102,7 +118,26 @@ button{
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 30px;
+  position: relative;
+ 
 }
+
+.nav-link:after{
+  content:'';
+  position:absolute;
+  width: 0px;
+  height: 2px;
+  background:white;
+  bottom:-5px;
+  left: 0;
+  border-radius: 100%;
+  transition: 225ms;
+}
+
+.nav-link:hover:after{
+  width: 100%;
+}
+
 
 .addform{
   padding:50px 0;
@@ -121,11 +156,16 @@ input{
   padding:5px;
   outline: none;
   background: transparent;
+  width: 60%;
+  border-radius: 3px;
+  color: white;
+  border: 1px solid white;
 }
 
 input:focus{
   background-color: transparent;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 
@@ -135,4 +175,14 @@ input:focus{
   left: 5px;
   padding:0;
   margin: 0;
+}
+
+.add-title{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.date{
+  color: rgba(255, 255, 255, 0.5);
 }

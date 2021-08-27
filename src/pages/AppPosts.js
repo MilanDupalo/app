@@ -23,6 +23,14 @@ function AppPosts(){
     const editPage = (id) =>{
         history.push(`edit/${id}`)
     }
+
+    const handleDelete = async (postId) => {
+        const data = await postService.delete(postId);
+    
+        if (data.count > 0) {
+          setPosts(posts.filter(({ id }) => id !== postId));
+        }
+      };
      
     
       return (
@@ -35,9 +43,10 @@ function AppPosts(){
                         className="card-box"
                     >
                         <div className="card-inner">
-                        <p>{post.title}</p>
-                        <button className="yellow" onClick={() => singlePage(post.id)}>View Post</button>
-                        <button className="green" onClick={() => editPage(post.id)}>Edit post</button>
+                        <p className="add-title">{post.title}</p>
+                        <button className="yellow" onClick={() => singlePage(post.id)}>View</button>
+                        <button className="green" onClick={() => editPage(post.id)}>Edit</button>
+                        <button className="red" onClick={() => handleDelete(post.id)}>Delete</button>
                         </div>
                     </li>
                 ))}
